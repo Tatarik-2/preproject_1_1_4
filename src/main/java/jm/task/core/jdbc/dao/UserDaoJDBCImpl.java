@@ -8,22 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    private Statement statement;
     private String command;
-    Connection connection;
 
     public UserDaoJDBCImpl() {
     }
-//попробовал так, чтобы не запускать коннект при каждом вызове метода. Но не сообразил, где закрывать))
-
-//    {
-//        connection = Util.getConnection();
-//        try {
-//            statement = connection.createStatement();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public void createUsersTable() {
         command = "CREATE TABLE IF NOT EXISTS Users\n" +
